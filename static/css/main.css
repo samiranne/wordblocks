@@ -10,6 +10,7 @@ body {
 }
 
 .wordbank-container {
+	margin-top: 20px;
 	height: 400px;
 	overflow-y: scroll;
 }

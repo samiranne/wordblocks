@@ -3,6 +3,8 @@
 {% block body %}
     <h1>Have Some Words</h1>
     <!-- <% include word_list { locals: list = leftwords } %> -->
+    <input type="checkbox" id="sound_enabled"/>
+    <label for="sound_enabled">Sound</label>
     <div class="wordbank-container">
         <div class="wordbank">
             {% for word in subjects %}
@@ -48,6 +50,12 @@
                 document.getElementById('predicate').innerHTML = el.innerHTML;
             });
         });
+
+        document.querySelectorAll('.wordbank div').forEach((a)=>a.onclick = ()=> { 
+            var soundEnabled = document.getElementById('sound_enabled').checked;
+            if (soundEnabled) speechSynthesis.speak(new SpeechSynthesisUtterance(a.innerText))
+        });
+
     </script>
 
 {% endblock %}
