@@ -1,0 +1,51 @@
+{% extends 'default.html' %}
+
+{% block body %}
+    <h1>Have Some Words</h1>
+    <!-- <% include word_list { locals: list = leftwords } %> -->
+    <div class="wordbank">
+        {% for word in subjects %}
+            <div id='{{word.id}}' class='subject'>{{ word }}</div>
+        {% endfor %}
+    </div>
+    <div class="wordbank">
+        {% for word in verbs %}
+            <div id='{{word.id}}' class='verb'>{{ word }}</div>
+        {% endfor %}
+    </div>
+    <div class="wordbank">
+        {% for word in predicates %}
+            <div id='{{word.id}}' class='predicate'>{{ word }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="sentence">
+        <span id="subject"></span>
+        <span id="verb"></span>
+        <span id="predicate"></span>
+    </div>
+
+    <script>
+        var subjects = document.querySelectorAll('.subject');
+        Array.prototype.forEach.call(subjects, function(el, i){
+            el.addEventListener('click', function() {
+                document.getElementById('subject').innerHTML = el.innerHTML;
+            });
+        });
+
+        var verbs = document.querySelectorAll('.verb');
+        Array.prototype.forEach.call(verbs, function(el, i){
+            el.addEventListener('click', function() {
+                document.getElementById('verb').innerHTML = el.innerHTML;
+            });
+        });
+
+        var predicates = document.querySelectorAll('.predicate');
+        Array.prototype.forEach.call(predicates, function(el, i){
+            el.addEventListener('click', function() {
+                document.getElementById('predicate').innerHTML = el.innerHTML;
+            });
+        });
+    </script>
+
+{% endblock %}

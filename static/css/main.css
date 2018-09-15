@@ -1,0 +1,33 @@
+body {
+    font-family: "Open Sans", Arial, sans-serif;
+}
+
+.sentence {
+	clear: both;
+	margin-top: 60px;
+	font-size: 36px;
+	line-height: 1.5;
+}
+
+.wordbank {
+	width: 33%; 
+	display: inline-block;
+}
+
+.subject, .verb, .predicate {
+	font-size: 20px;
+	padding: 10px;	
+	background-color: #c5f7e3; 
+	margin-bottom: 10px;
+	cursor: pointer;
+	border-radius: 8px;
+}
+
+
+/*body {
+    color: #212121;
+    font-family: "Helvetica Neue", "Calibri Light", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.02em;
+}*/
