@@ -3,20 +3,22 @@
 {% block body %}
     <h1>Have Some Words</h1>
     <!-- <% include word_list { locals: list = leftwords } %> -->
-    <div class="wordbank">
-        {% for word in subjects %}
-            <div id='{{word.id}}' class='subject'>{{ word }}</div>
-        {% endfor %}
-    </div>
-    <div class="wordbank">
-        {% for word in verbs %}
-            <div id='{{word.id}}' class='verb'>{{ word }}</div>
-        {% endfor %}
-    </div>
-    <div class="wordbank">
-        {% for word in predicates %}
-            <div id='{{word.id}}' class='predicate'>{{ word }}</div>
-        {% endfor %}
+    <div class="wordbank-container">
+        <div class="wordbank">
+            {% for word in subjects %}
+                <div id='{{word.id}}' class='subject'>{{ word }}</div>
+            {% endfor %}
+        </div>
+        <div class="wordbank">
+            {% for word in verbs %}
+                <div id='{{word.id}}' class='verb'>{{ word }}</div>
+            {% endfor %}
+        </div>
+        <div class="wordbank">
+            {% for word in predicates %}
+                <div id='{{word.id}}' class='predicate'>{{ word }}</div>
+            {% endfor %}
+        </div>
     </div>
 
     <div class="sentence">

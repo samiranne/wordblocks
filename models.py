@@ -21,7 +21,7 @@ class Word(db.Model):
 
     @staticmethod
     def get_all():
-        return Word.query.order_by(Word.name).all()
+        return Word.query.order_by(Word.id).all()
 
     @staticmethod
     def get_by_category():

@@ -9,9 +9,14 @@ body {
 	line-height: 1.5;
 }
 
+.wordbank-container {
+	height: 400px;
+	overflow-y: scroll;
+}
 .wordbank {
 	width: 33%; 
 	display: inline-block;
+	vertical-align: top;
 }
 
 .subject, .verb, .predicate {
