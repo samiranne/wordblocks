@@ -5,6 +5,10 @@
     <!-- <% include word_list { locals: list = leftwords } %> -->
     <input type="checkbox" id="sound_enabled"/>
     <label for="sound_enabled">Sound</label>
+
+    <input id="pitch" type="range" min="0" max="20" value="10" class="slider">
+    <label for="pitch">Pitch</label>
+
     <div class="wordbank-container">
         <div class="wordbank">
             {% for word in subjects %}

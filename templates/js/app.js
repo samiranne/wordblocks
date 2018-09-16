@@ -8,7 +8,17 @@ for (const category of categories) {
     });
 }
 
-document.querySelectorAll('.wordbank div').forEach((a)=>a.onclick = ()=> {
-    var soundEnabled = document.getElementById('sound_enabled').checked;
-    if (soundEnabled) speechSynthesis.speak(new SpeechSynthesisUtterance(a.innerText))
+document.querySelectorAll('.wordbank div').forEach((a) => a.onclick = () => {
+    let soundEnabled = document.getElementById('sound_enabled').checked;
+    let pitchSlider = document.getElementById('pitch');
+
+    let utterance = new SpeechSynthesisUtterance(a.innerText);
+    // Our range slider works on integers, but pitch is between 0 and 2
+    // according to
+    // https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/pitch
+    utterance.pitch = pitchSlider.value / 10;
+
+    if (soundEnabled) {
+        speechSynthesis.speak(utterance);
+    }
 });
