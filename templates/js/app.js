@@ -22,3 +22,16 @@ document.querySelectorAll('.wordbank div').forEach((a) => a.onclick = () => {
         speechSynthesis.speak(utterance);
     }
 });
+
+document.getElementById("sentence").onclick = () => {
+    let sentenceString = "";
+    let soundEnabled = document.getElementById('sound_enabled').checked;
+    if (soundEnabled) {
+        document.querySelectorAll(".sentence span").forEach(function(el) { 
+            sentenceString += " ";
+            sentenceString += el.innerHTML; 
+        });
+        let utterance = new SpeechSynthesisUtterance(sentenceString);
+        speechSynthesis.speak(utterance);
+    }
+}
